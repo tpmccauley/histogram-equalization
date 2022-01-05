@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+
+  <script src="js/d3.v4.min.js"></script>
+
+  <style>
+
+    body {
+    margin:0;
+    font: 12px Lucida Grande,sans-serif;
+    }
+    .column {
+    width: 32%;
+    float: left;
+    padding: 5px;
+    }
+    canvas {
+    width: 100%;
+    }
+    #drop-canvas {
+    border: 2px dashed #ccc;
+    }
+    #drop-canvas.hover {
+    border: 2px dashed #333;
+    }
+    #norm-canvas, #eq-canvas {
+    border: 2px dashed #ccc;
+    }
+    .hist {
+    //border: 1px solid #ccc;
+    border: none;
+    width: 300px;
+    height: 256px;
+    margin: 20px auto;
+    }
+    svg {
+    width: 300px;
+    height: 256px;
+    }
+    .histogram-area {
+    fill-opacity: 1.0;
+    fill: #ccc;
+    }
+    .histogram-line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="column">
+    <canvas id="drop-canvas"></canvas>
+    original image
+    <div class="hist">
+      <svg id="drop-hist"></svg>
+    </div>
+    <div class="hist">
+      <svg id="drop-cumulative"></svg>
+    </div>
+  </div>
+  <div class="column">
+    <canvas id="norm-canvas"></canvas>
+    image after normalization
+    <div class="hist">
+      <svg id="norm-hist"></svg>
+    </div>
+    <div class="hist">
+      <svg id="norm-cumulative"></svg>
+    </div>
+  </div>
+  <div class="column">
+    <canvas id="eq-canvas"></canvas>
+    image after equalization
+    <div class="hist">
+      <svg id="eq-hist"></svg>
+    </div>
+    <div class="hist">
+      <svg id="eq-cumulative"></svg>
+    </div>
+  </div>
+
+  <script src="js/image-hist.js"></script>
+
+</body>
